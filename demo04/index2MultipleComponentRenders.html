@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      class MainComponent extends React.Component{
+        render(){
+          return (
+            <div>
+              <HelloMessage name={this.props.name}/>
+              <MyThought thought={this.props.thought}/>
+            </div>
+          );
+        }
+      }
+
+      class HelloMessage extends React.Component{
+        render(){
+          return(
+            <h1>Hello {this.props.name}</h1>
+          );
+        }
+      }
+
+      class MyThought extends React.Component{
+        render(){
+          return(
+            <h1>My thought is {this.props.thought}</h1>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <MainComponent name="Sanooktuktuk" thought="The healthful and pleasant abode." />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
